@@ -3,6 +3,8 @@ import { I18NextHtmlProvider } from "@/libs/i18n-next/i18n-next-html-provider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "@/components/ui/toaster";
+import { MyelinLink } from "@/components/myelin/components/myelin-link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +38,10 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           {children}
+
+          <Toaster />
+
+          <MyelinLink />
         </ThemeProvider>
       </body>
     </I18NextHtmlProvider>
