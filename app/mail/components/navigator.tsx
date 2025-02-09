@@ -2,7 +2,6 @@
 
 import { BookIcon, CatIcon, ReceiptEuro, TreesIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -11,14 +10,22 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTranslation } from "@/libs/i18n-next/use-translation";
+
+function NavigatorItemContainer({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="dark:bg-[rgb(31,32,33)] bg-gray-100 rounded-2xl p-8 flex justify-center flex-col items-center">
+      {children}
+    </div>
+  );
+}
 
 export function Navigator() {
+  const { t } = useTranslation(["inbox", "navigator"]);
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost" className="text-3xl font-bold">
-          e0
-        </Button>
+        <button className="text-3xl font-bold">e0</button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-3xl">
         <DialogHeader>
@@ -31,27 +38,27 @@ export function Navigator() {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="grid sm:grid-cols-2 grid-cols-1 gap-8">
-          <div className="dark:bg-[rgb(31,32,33)] p-8 flex justify-center flex-col items-center">
+        <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
+          <NavigatorItemContainer>
             <TreesIcon />
 
-            <p>the inbox</p>
-          </div>
-          <div className="dark:bg-[rgb(31,32,33)] p-8 flex justify-center flex-col items-center">
+            <p>{t("the.evbox")}</p>
+          </NavigatorItemContainer>
+          <NavigatorItemContainer>
             <BookIcon />
 
-            <p>the feed</p>
-          </div>
-          <div className="dark:bg-[rgb(31,32,33)] p-8 flex justify-center flex-col items-center">
+            <p>{t("navigator:the.feed")}</p>
+          </NavigatorItemContainer>
+          <NavigatorItemContainer>
             <CatIcon />
 
-            <p>le chat</p>
-          </div>
-          <div className="dark:bg-[rgb(31,32,33)] p-8 flex justify-center flex-col items-center">
+            <p>{t("navigator:le.chat")}</p>
+          </NavigatorItemContainer>
+          <NavigatorItemContainer>
             <ReceiptEuro />
 
-            <p>paper trail</p>
-          </div>
+            <p>{t("navigator:paper.trail")}</p>
+          </NavigatorItemContainer>
         </div>
       </DialogContent>
     </Dialog>
