@@ -111,9 +111,9 @@ export default function Mail() {
     <div className="relative">
       <Navbar />
 
-      <main className="mt-24 p-4 dark:bg-[rgb(11,12,16)]">
+      <main className="mt-36 p-4 dark:bg-[rgb(11,12,16)] max-w-7xl mx-auto">
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-center text-2xl font-bold">{t("the.inbox")}</h1>
+          <h1 className="text-center text-3xl font-bold">{t("the.inbox")}</h1>
           <Button className="rounded-full">
             <PlusIcon />
 
