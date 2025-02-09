@@ -79,24 +79,24 @@ function DialogCloseButton() {
   );
 }
 
-interface Mail {
-  title: string;
-  description: string;
-  createdAt: number;
-}
+// interface Mail {
+//   title: string;
+//   description: string;
+//   createdAt: number;
+// }
 
-const mailBoxes: Mail[] = [
-  {
-    title: "Getting around with the 👋e0 Menu",
-    description: "The e0 Team - Welcome to the club",
-    createdAt: Date.now(),
-  },
-  {
-    title: "Getting around with the 👋e0 Menu",
-    description: "The e0 Team - Welcome to the club",
-    createdAt: Date.now(),
-  },
-];
+// const mailBoxes: Mail[] = [
+//   {
+//     title: "Getting around with the 👋e0 Menu",
+//     description: "The e0 Team - Welcome to the club",
+//     createdAt: Date.now(),
+//   },
+//   {
+//     title: "Getting around with the 👋e0 Menu",
+//     description: "The e0 Team - Welcome to the club",
+//     createdAt: Date.now(),
+//   },
+// ];
 
 function Navbar() {
   return (
