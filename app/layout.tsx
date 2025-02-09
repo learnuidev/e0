@@ -1,8 +1,6 @@
-import { NextAuthProvider } from "@/components/next-auth-provider";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { I18NextHtmlProvider } from "@/libs/i18n-next/i18n-next-html-provider";
 import type { Metadata } from "next";
-import { getServerSession } from "next-auth";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,24 +24,20 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerSession();
-
   return (
     <I18NextHtmlProvider>
-      <NextAuthProvider session={session}>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
-        </body>
-      </NextAuthProvider>
+          {children}
+        </ThemeProvider>
+      </body>
     </I18NextHtmlProvider>
   );
 }
