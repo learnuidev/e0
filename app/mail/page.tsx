@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { useTranslation } from "@/libs/i18n-next/use-translation";
 
-export function DialogCloseButton() {
+function DialogCloseButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
