@@ -1,3 +1,5 @@
+"use client";
+
 import {
   BookIcon,
   CatIcon,
@@ -18,6 +20,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useTranslation } from "@/libs/i18n-next/use-translation";
 
 export function DialogCloseButton() {
   return (
@@ -103,31 +106,32 @@ function Navbar() {
 }
 
 export default function Mail() {
+  const { t } = useTranslation("inbox");
   return (
     <div className="relative">
       <Navbar />
 
       <main className="mt-24 p-4 dark:bg-[rgb(11,12,16)]">
         <div className="flex w-full justify-between items-center">
-          <h1 className="text-center text-2xl font-bold">the inbox</h1>
+          <h1 className="text-center text-2xl font-bold">{t("the.inbox")}</h1>
           <Button className="rounded-full">
             <PlusIcon />
 
-            <p>Write</p>
+            <p>{t("write")}</p>
           </Button>
         </div>
 
         <hr className="my-12" />
 
         <section>
-          <h4 className="uppercase text-xl font-semibold">New Inbox</h4>
+          <h4 className="uppercase text-xl font-semibold">{t("new.inbox")}</h4>
 
           <div className="mt-8 grid gap-4">
             <div className="flex justify-between items-center">
               <div>
                 <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
                 <p className="text-gray-500">
-                  They e0 Team - Welcome to the club
+                  The e0 Team - Welcome to the club
                 </p>
               </div>
 
@@ -137,7 +141,7 @@ export default function Mail() {
               <div>
                 <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
                 <p className="text-gray-500">
-                  They e0 Team - Welcome to the club
+                  The e0 Team - Welcome to the club
                 </p>
               </div>
 
@@ -148,14 +152,16 @@ export default function Mail() {
 
         <hr className="my-12" />
         <section>
-          <h4 className="uppercase text-xl font-semibold">Recently Seen</h4>
+          <h4 className="uppercase text-xl font-semibold">
+            {t("recently.seen")}
+          </h4>
 
           <div className="mt-8 grid gap-4">
             <div className="flex justify-between items-center">
               <div>
                 <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
                 <p className="text-gray-500">
-                  They e0 Team - Welcome to the club
+                  The e0 Team - Welcome to the club
                 </p>
               </div>
 
@@ -165,7 +171,7 @@ export default function Mail() {
               <div>
                 <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
                 <p className="text-gray-500">
-                  They e0 Team - Welcome to the club
+                  The e0 Team - Welcome to the club
                 </p>
               </div>
 
