@@ -4,6 +4,7 @@ import banner from "@/locales/en/banner.json";
 import common from "@/locales/en/common.json";
 import inbox from "@/locales/en/inbox.json";
 import navigator from "@/locales/en/navigator.json";
+import search from "@/locales/en/search.json";
 
 declare module "i18next" {
   interface CustomTypeOptions {
@@ -13,6 +14,7 @@ declare module "i18next" {
       common: typeof common;
       inbox: typeof inbox;
       navigator: typeof navigator;
+      search: typeof search;
     };
   }
 }
