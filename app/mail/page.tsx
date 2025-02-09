@@ -3,6 +3,7 @@
 import {
   BookIcon,
   CatIcon,
+  MessageCircleIcon,
   PlusIcon,
   ReceiptEuro,
   SearchIcon,
@@ -22,6 +23,7 @@ import {
 } from "@/components/ui/dialog";
 import { useTranslation } from "@/libs/i18n-next/use-translation";
 import { ToggleTheme } from "@/components/toggle-theme";
+import { LanguageSwitcher } from "@/libs/i18n-next/language-switcher";
 
 function DialogCloseButton() {
   return (
@@ -77,6 +79,25 @@ function DialogCloseButton() {
   );
 }
 
+interface Mail {
+  title: string;
+  description: string;
+  createdAt: number;
+}
+
+const mailBoxes: Mail[] = [
+  {
+    title: "Getting around with the 👋e0 Menu",
+    description: "The e0 Team - Welcome to the club",
+    createdAt: Date.now(),
+  },
+  {
+    title: "Getting around with the 👋e0 Menu",
+    description: "The e0 Team - Welcome to the club",
+    createdAt: Date.now(),
+  },
+];
+
 function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white dark:bg-[rgb(11,12,13)] shadow-sm z-50">
@@ -102,6 +123,7 @@ function Navbar() {
 
         <div className="flex justify-end space-x-2 items-center">
           <ToggleTheme />
+          <LanguageSwitcher />
           <div className="flex justify-end">Account</div>
         </div>
       </div>
@@ -111,7 +133,7 @@ function Navbar() {
 
 function EvItem() {
   return (
-    <div className="flex justify-between items-center hover:bg-gray-200 p-4 rounded-xl transition">
+    <div className="flex justify-between items-center hover:bg-gray-200 hover:dark:bg-[rgb(13,14,15)] p-4 rounded-xl transition">
       <div>
         <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
         <p className="text-gray-500">The e0 Team - Welcome to the club</p>
@@ -130,13 +152,20 @@ export default function Mail() {
 
       <main className="mt-36 p-8 dark:bg-[rgb(17,18,19)] bg-gray-100 rounded-2xl max-w-5xl mx-auto">
         <div className="flex w-full justify-between items-center mb-12">
-          <div></div>
           <h1 className="text-center text-3xl font-bold">{t("the.evbox")}</h1>
-          <Button className="rounded-full">
-            <PlusIcon />
+          <div className="space-x-4">
+            <Button className="rounded-full" variant="ghost">
+              <PlusIcon />
 
-            <p>{t("write")}</p>
-          </Button>
+              <p>{t("write")}</p>
+            </Button>
+
+            <Button className="rounded-full">
+              <MessageCircleIcon />
+
+              <p>{t("chat")}</p>
+            </Button>
+          </div>
         </div>
 
         <div className="flex items-center justify-between mb-4">

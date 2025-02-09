@@ -1,9 +1,8 @@
 {
-  "the.inbox": "收件箱",
   "write": "写",
-  "new.inbox": "新建收件箱",
   "recently.seen": "最近查看",
   "the.evbox": "埃夫盒",
   "power.through.new": "⚡ 穿越新事物",
-  "new.evbox": "新 Evbox"
+  "new.evbox": "新 Evbox",
+  "chat": "聊天"
 }
