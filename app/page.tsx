@@ -6,14 +6,16 @@ import { signIn, useSession, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { AnimatedLoadingText } from "@/components/animated-loading-text";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const googleAccessTokenKey = "google-access-token";
 export default function Home() {
   const { t } = useTranslation(["banner", "common"]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const session = useSession();
+  const session: any = useSession();
+
+  const router = useRouter();
 
   const accessToken =
     localStorage.getItem(googleAccessTokenKey) || session?.data?.accessToken;
@@ -55,15 +57,18 @@ export default function Home() {
             {t("common:signin.with.google")}
           </Button>
         ) : (
-          <div>
-            <Link
-              href="/evbox"
-              className="border-[1px] inline-block px-4 py-[4px] mt-8 text-sm rounded-full"
+          <div className="space-x-4">
+            <Button
+              onClick={() => {
+                router.push("/evbox");
+              }}
+              className="border-[1px] py-[8px] inline-block px-4 mt-8 text-sm rounded-full"
             >
-              {t("common:login")}
-            </Link>
+              {t("common:proceed.to.evbox")}
+            </Button>
 
             <Button
+              variant="outline"
               onClick={() => {
                 signOut();
                 localStorage.setItem(googleAccessTokenKey, "");

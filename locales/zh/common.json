@@ -1,5 +1,6 @@
 {
   "login": "登录",
   "logout": "登出",
-  "signin.with.google": "使用 Google 登录"
+  "signin.with.google": "使用 Google 登录",
+  "proceed.to.evbox": "前往evbox"
 }

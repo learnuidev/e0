@@ -1,5 +1,6 @@
 {
   "login": "Connexion",
   "logout": "Déconnexion",
-  "signin.with.google": "Se connecter avec Google"
+  "signin.with.google": "Se connecter avec Google",
+  "proceed.to.evbox": "Procéder à evbox"
 }

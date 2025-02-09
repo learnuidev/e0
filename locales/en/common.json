@@ -1,5 +1,6 @@
 {
   "login": "Login",
   "logout": "Logout",
-  "signin.with.google": "Sign In With Google"
+  "signin.with.google": "Sign In With Google",
+  "proceed.to.evbox": "Procced to evbox"
 }
