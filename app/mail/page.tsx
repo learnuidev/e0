@@ -39,7 +39,7 @@ export default function MailPage() {
           </h2>
           <Button
             variant="ghost"
-            className="text-purple-400 text-sm hover:text-purple-300"
+            className="text-purple-400 text-sm hover:text-purple-300 rounded-full"
           >
             {t("power.through.new")}
           </Button>
