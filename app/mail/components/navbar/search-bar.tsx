@@ -5,7 +5,7 @@ export const SearchBar = () => {
     <div className="relative flex items-center">
       <input
         type="text"
-        className="w-full py-2 pr-4 pl-10 dark:text-gray-300rtext-gray-700 border border-none rounded-full focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
+        className="focus-visible:ring-0 w-full py-2 pr-4 pl-10 dark:text-gray-300rtext-gray-700 border border-none rounded-full focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-200"
         placeholder="Ask me anything..."
       />
       <button

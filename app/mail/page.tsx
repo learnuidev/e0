@@ -15,7 +15,7 @@ export default function MailPage() {
     <div className="relative">
       <Navbar />
 
-      <main className="mt-36 p-8 dark:bg-[rgb(17,18,19)] bg-gray-100 rounded-2xl max-w-5xl mx-auto">
+      <main className="mt-36 p-4 sm:p-8 dark:bg-[rgb(17,18,19)] bg-gray-100 rounded-2xl max-w-5xl mx-auto">
         <div className="flex w-full justify-between items-center mb-12">
           <h1 className="text-center text-3xl font-bold">{t("the.evbox")}</h1>
           <div className="space-x-4">

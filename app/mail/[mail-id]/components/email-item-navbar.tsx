@@ -6,13 +6,16 @@ import { Navigator } from "../../components/navigator";
 import Link from "next/link";
 import { SearchBar } from "../../components/navbar/search-bar";
 import { NavbarContainer } from "../../components/navbar/navbar-container";
+import { ArrowLeft } from "lucide-react";
 
 export function EmailItemNavbar() {
   return (
     <NavbarContainer>
       {/* Left Logo */}
       <div className="flex space-x-4 items-center">
-        <Link href="/mail">Back</Link>
+        <Link href="/mail">
+          <ArrowLeft />{" "}
+        </Link>
 
         <SearchBar />
       </div>
