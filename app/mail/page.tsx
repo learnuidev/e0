@@ -21,6 +21,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useTranslation } from "@/libs/i18n-next/use-translation";
+import { ToggleTheme } from "@/components/toggle-theme";
 
 function DialogCloseButton() {
   return (
@@ -79,7 +80,7 @@ function DialogCloseButton() {
 function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white dark:bg-[rgb(11,12,13)] shadow-sm z-50">
-      <div className="max-w-7xl mx-auto grid grid-cols-3 gap-4 p-4 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-3 gap-4 p-4 items-center">
         {/* Left Logo */}
         <div className="relative flex items-center">
           <input
@@ -99,9 +100,25 @@ function Navbar() {
           <DialogCloseButton />
         </div>
 
-        <div className="flex justify-end">Account</div>
+        <div className="flex justify-end space-x-2 items-center">
+          <ToggleTheme />
+          <div className="flex justify-end">Account</div>
+        </div>
       </div>
     </nav>
+  );
+}
+
+function EvItem() {
+  return (
+    <div className="flex justify-between items-center hover:bg-gray-200 p-4 rounded-xl transition">
+      <div>
+        <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
+        <p className="text-gray-500">The e0 Team - Welcome to the club</p>
+      </div>
+
+      <p>1:03am</p>
+    </div>
   );
 }
 
@@ -111,9 +128,10 @@ export default function Mail() {
     <div className="relative">
       <Navbar />
 
-      <main className="mt-36 p-4 dark:bg-[rgb(11,12,16)] max-w-7xl mx-auto">
-        <div className="flex w-full justify-between items-center">
-          <h1 className="text-center text-3xl font-bold">{t("the.inbox")}</h1>
+      <main className="mt-36 p-8 dark:bg-[rgb(17,18,19)] bg-gray-100 rounded-2xl max-w-5xl mx-auto">
+        <div className="flex w-full justify-between items-center mb-12">
+          <div></div>
+          <h1 className="text-center text-3xl font-bold">{t("the.evbox")}</h1>
           <Button className="rounded-full">
             <PlusIcon />
 
@@ -121,61 +139,39 @@ export default function Mail() {
           </Button>
         </div>
 
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+            {t("new.evbox")}
+          </h2>
+          <Button
+            variant="ghost"
+            className="text-purple-400 text-sm hover:text-purple-300"
+          >
+            {t("power.through.new")}
+          </Button>
+        </div>
+
+        <div className="sm:px-4 px-0">
+          <section>
+            <div className="mt-8 grid gap-4">
+              <EvItem />
+              <EvItem />
+            </div>
+          </section>
+        </div>
+
         <hr className="my-12" />
-
         <section>
-          <h4 className="uppercase text-xl font-semibold">{t("new.inbox")}</h4>
-
-          <div className="mt-8 grid gap-4">
-            <div className="flex justify-between items-center">
-              <div>
-                <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
-                <p className="text-gray-500">
-                  The e0 Team - Welcome to the club
-                </p>
-              </div>
-
-              <p>1:03am</p>
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
-                <p className="text-gray-500">
-                  The e0 Team - Welcome to the club
-                </p>
-              </div>
-
-              <p>1:03am</p>
-            </div>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-sm font-medium text-slate-400 uppercase tracking-wider">
+              {t("recently.seen")}
+            </h2>
           </div>
-        </section>
 
-        <hr className="my-12" />
-        <section>
-          <h4 className="uppercase text-xl font-semibold">
-            {t("recently.seen")}
-          </h4>
-
-          <div className="mt-8 grid gap-4">
-            <div className="flex justify-between items-center">
-              <div>
-                <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
-                <p className="text-gray-500">
-                  The e0 Team - Welcome to the club
-                </p>
-              </div>
-
-              <p>1:03am</p>
-            </div>
-            <div className="flex justify-between items-center">
-              <div>
-                <h5 className="text-xl"> Getting around with the 👋e0 Menu</h5>
-                <p className="text-gray-500">
-                  The e0 Team - Welcome to the club
-                </p>
-              </div>
-
-              <p>1:03am</p>
+          <div className="sm:px-4 px-0">
+            <div className="mt-8 grid gap-4">
+              <EvItem />
+              <EvItem />
             </div>
           </div>
         </section>
