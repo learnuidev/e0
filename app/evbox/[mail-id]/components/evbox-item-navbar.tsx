@@ -13,7 +13,7 @@ export function EvboxItemNavbar() {
     <NavbarContainer>
       {/* Left Logo */}
       <div className="flex space-x-4 items-center">
-        <Link href="/mail">
+        <Link href="/evbox">
           <ArrowLeft />{" "}
         </Link>
 

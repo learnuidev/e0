@@ -7,7 +7,7 @@ import { formatTimestamp } from "../utils/format-timestamp";
 export function EvItem({ mail }: { mail: Mail }) {
   return (
     <Link
-      href={`/mail/${mail.id}`}
+      href={`/evbox/${mail.id}`}
       className="flex justify-between items-start flex-col-reverse sm:flex-row hover:bg-gray-200 hover:dark:bg-[rgb(13,14,15)] p-4 rounded-xl transition"
     >
       <div>

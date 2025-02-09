@@ -13,7 +13,7 @@ export default function Home() {
         <p className="text-2xl">{t("banner:description")}</p>
 
         <Link
-          href="/mail"
+          href="/evbox"
           className="border-[1px] inline-block px-4 py-[4px] mt-8 text-sm rounded-full"
         >
           {t("common:login")}
