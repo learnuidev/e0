@@ -1,4 +1,5 @@
 {
   "login": "Iniciar sesión",
-  "logout": "Cerrar sesión"
+  "logout": "Cerrar sesión",
+  "signin.with.google": "Iniciar sesión con Google"
 }

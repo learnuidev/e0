@@ -1,4 +1,5 @@
 {
   "login": "Connexion",
-  "logout": "Déconnexion"
+  "logout": "Déconnexion",
+  "signin.with.google": "Se connecter avec Google"
 }
