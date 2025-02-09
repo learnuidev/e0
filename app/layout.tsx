@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { NextAuthProvider } from "@/components/next-auth-provider";
-import { getServerSession } from "next-auth";
 import { ThemeProvider } from "@/components/theme-provider/theme-provider";
 import { I18NextHtmlProvider } from "@/libs/i18n-next/i18n-next-html-provider";
-import { LanguageSwitcher } from "@/libs/i18n-next/language-switcher";
+import type { Metadata } from "next";
+import { getServerSession } from "next-auth";
+import { Geist, Geist_Mono } from "next/font/google";
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,7 +40,6 @@ export default async function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <LanguageSwitcher />
             {children}
           </ThemeProvider>
         </body>
