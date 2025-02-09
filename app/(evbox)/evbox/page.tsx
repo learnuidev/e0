@@ -15,13 +15,15 @@ export default function MailPage() {
 
   const { data } = useListEmailsQuery();
 
-  return (
-    <div>
-      <code>
-        <pre>{JSON.stringify(data, null, 4)}</pre>
-      </code>
-    </div>
-  );
+  console.log("data", data);
+
+  // return (
+  //   <div>
+  //     <code>
+  //       <pre>{JSON.stringify(data, null, 4)}</pre>
+  //     </code>
+  //   </div>
+  // );
   return (
     <div className="relative">
       <Navbar />
