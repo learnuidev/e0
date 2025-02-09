@@ -38,7 +38,7 @@ function DialogCloseButton() {
           <DialogTitle>Navigator</DialogTitle>
           <DialogDescription>
             <span>
-              Press <span className="font-bold">R</span> to load this menu from
+              Press <span className="font-bold">V</span> to load this menu from
               anywhere
             </span>
           </DialogDescription>
