@@ -1,9 +1,9 @@
-import { EmailItemNavbar } from "./components/email-item-navbar";
+import { EvboxItemNavbar } from "./components/evbox-item-navbar";
 
 export default function EmailItem() {
   return (
     <div className="relative">
-      <EmailItemNavbar />
+      <EvboxItemNavbar />
       TODO
     </div>
   );

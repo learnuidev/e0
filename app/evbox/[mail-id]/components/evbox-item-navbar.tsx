@@ -8,7 +8,7 @@ import { SearchBar } from "../../components/navbar/search-bar";
 import { NavbarContainer } from "../../components/navbar/navbar-container";
 import { ArrowLeft } from "lucide-react";
 
-export function EmailItemNavbar() {
+export function EvboxItemNavbar() {
   return (
     <NavbarContainer>
       {/* Left Logo */}
