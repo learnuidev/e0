@@ -5,6 +5,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { MyelinLink } from "@/components/myelin/components/myelin-link";
+import { NextAuthProvider } from "@/components/next-auth-provider";
+import { getServerSession } from "next-auth";
+// import { getCookie } from "better-auth";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,24 +29,28 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const session = await getServerSession();
+
   return (
     <I18NextHtmlProvider>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <NextAuthProvider session={session}>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-          {children}
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
 
-          <Toaster />
+            <Toaster />
 
-          <MyelinLink />
-        </ThemeProvider>
-      </body>
+            <MyelinLink />
+          </ThemeProvider>
+        </body>
+      </NextAuthProvider>
     </I18NextHtmlProvider>
   );
 }

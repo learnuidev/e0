@@ -17,7 +17,9 @@ export function EvboxItemNavbar() {
           <ArrowLeft />{" "}
         </Link>
 
-        <SearchBar />
+        <div className="w-full">
+          <SearchBar />
+        </div>
       </div>
 
       <Navigator />

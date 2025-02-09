@@ -5,6 +5,7 @@ import GoogleProvider from "next-auth/providers/google";
 // Extend the DefaultSession interface to include custom properties
 interface CustomSession extends DefaultSession {
   accessToken?: string;
+  user: any;
   sub?: string;
 }
 
@@ -50,10 +51,11 @@ const options: NextAuthOptions = {
     async session(props: any) {
       const { session, token } = props;
 
-      console.log("SESSION TOKEN", session);
       // Send properties to the client, like an access_token from a provider.
       session.accessToken = token.accessToken;
       session.sub = token.sub;
+
+      console.log("SESSION TOKEN", session);
       return session as CustomSession;
     },
   },
