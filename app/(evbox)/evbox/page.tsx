@@ -8,9 +8,20 @@ import { useTranslation } from "@/libs/i18n-next/use-translation";
 import { EvItem } from "./components/ev-item";
 import { Navbar } from "./components/navbar";
 import { mailList } from "./modules/mail/mail.constants";
+import { useListEmailsQuery } from "@/libs/gmail/queries/use-list-emails-query";
 
 export default function MailPage() {
   const { t } = useTranslation("inbox");
+
+  const { data } = useListEmailsQuery();
+
+  return (
+    <div>
+      <code>
+        <pre>{JSON.stringify(data, null, 4)}</pre>
+      </code>
+    </div>
+  );
   return (
     <div className="relative">
       <Navbar />
