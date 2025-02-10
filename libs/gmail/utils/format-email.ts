@@ -1,10 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+
+const isPartHtmlOrText = (part: any) =>
+  part.mimeType === "text/html" || part.mimeType === "text/html";
 function getEmailBody(message: any) {
   if (message?.payload?.parts?.length > 0) {
-    const body = message.payload.parts.find(
-      (part: any) =>
-        part.mimeType === "text/html" || part.mimeType === "text/html"
-    );
+    const isAlternative = message.payload.parts.find((part: any) => {
+      return part.mimeType === "multipart/alternative";
+    });
+
+    let body;
+
+    if (isAlternative) {
+      body = isAlternative?.parts.find(isPartHtmlOrText);
+    } else {
+      body = message.payload.parts.find(isPartHtmlOrText);
+    }
+
     const encodedBody = body?.body?.data;
 
     if (encodedBody) {

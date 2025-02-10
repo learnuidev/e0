@@ -6,6 +6,7 @@ import common from "@/locales/en/common.json";
 import inbox from "@/locales/en/inbox.json";
 import myelin from "@/locales/en/myelin.json";
 import navigator from "@/locales/en/navigator.json";
+import paperTrail from "@/locales/en/paperTrail.json";
 import search from "@/locales/en/search.json";
 
 declare module "i18next" {
@@ -18,6 +19,7 @@ declare module "i18next" {
       inbox: typeof inbox;
       myelin: typeof myelin;
       navigator: typeof navigator;
+      paperTrail: typeof paperTrail;
       search: typeof search;
     };
   }

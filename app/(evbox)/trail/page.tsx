@@ -6,20 +6,15 @@ import { MessageCircleIcon, PlusIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "@/libs/i18n-next/use-translation";
 
-// import { EvItem } from "./components/ev-item";
-// import { Navbar } from "./components/navbar";
-// import { mailList } from "./modules/mail/mail.constants";
 import { useListEmailsQuery } from "@/libs/gmail/queries/use-list-emails-query";
 import { Navbar } from "../evbox/components/navbar";
 import { EvContainer } from "../evbox/components/ev-container";
 import { mailList } from "../evbox/modules/mail/mail.constants";
 import { EvItem } from "../evbox/components/ev-item";
 import { Mail } from "../evbox/modules/mail/mail.types";
-// import { Mail } from "./modules/mail/mail.types";
-// import { EvContainer } from "./components/ev-container";
 
 export default function MailPage() {
-  const { t } = useTranslation("inbox");
+  const { t } = useTranslation(["inbox", "navigator"]);
 
   const { data } = useListEmailsQuery({ q: "has:attachment" });
 
@@ -31,7 +26,9 @@ export default function MailPage() {
 
       <EvContainer>
         <div className="flex w-full justify-between items-center mb-12">
-          <h1 className="text-center text-3xl font-bold">{t("the.evbox")}</h1>
+          <h1 className="text-center text-3xl font-bold">
+            {t("navigator:paper.trail")}
+          </h1>
           <div className="space-x-4">
             <Button className="rounded-full" variant="ghost">
               <PlusIcon />
