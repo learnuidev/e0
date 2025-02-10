@@ -7,8 +7,11 @@ import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { AnimatedLoadingText } from "@/components/animated-loading-text";
 import { useRouter } from "next/navigation";
+import {
+  getGoogleAccessToken,
+  googleAccessTokenKey,
+} from "@/libs/gmail/utils/get-google-access-token";
 
-const googleAccessTokenKey = "google-access-token";
 export default function Home() {
   const { t } = useTranslation(["banner", "common"]);
 
@@ -17,8 +20,7 @@ export default function Home() {
 
   const router = useRouter();
 
-  const accessToken =
-    localStorage.getItem(googleAccessTokenKey) || session?.data?.accessToken;
+  const accessToken = getGoogleAccessToken() || session?.data?.accessToken;
 
   useEffect(() => {
     if (accessToken) {

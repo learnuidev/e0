@@ -1,13 +1,12 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { getGoogleAccessToken } from "../utils/get-google-access-token";
 
 export const listEmailsQueryKey = "list-emails";
 
-const googleAccessTokenKey = "google-access-token";
-
 export const useListEmailsQuery = (options = {}) => {
-  const authToken = localStorage.getItem(googleAccessTokenKey);
+  const authToken = getGoogleAccessToken();
   return useQuery({
     queryKey: [listEmailsQueryKey],
     queryFn: async () => {
@@ -23,7 +22,7 @@ export const useListEmailsQuery = (options = {}) => {
 
       return resp.json();
     },
-    // retry: false,
+    retry: false,
     ...options,
   });
 };
