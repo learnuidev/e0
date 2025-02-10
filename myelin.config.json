@@ -12,5 +12,8 @@
     "awsRegion": "us-east-1"
   },
   "projectId": "14558a1b-d714-4939-ae91-879e80cba8e0",
-  "storageProvider": "dynamodb"
+  "storageProvider": "dynamodb",
+  "sync": {
+    "type": "local"
+  }
 }
