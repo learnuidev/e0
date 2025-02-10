@@ -7,7 +7,6 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { AnimatedLoadingText } from "../animated-loading-text";
 import myelinConfig from "@/myelin.config.json";
 import { Button } from "../ui/button";
 import { useUpsertCustomTranslationMutation } from "./mutations/use-upsert-custom-translation-mutation";
