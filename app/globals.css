@@ -70,3 +70,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Google */
+/* 
+.outer_wrapper {
+  background-color: white !important;
+}
+
+.text_wrapper {
+  background-color: rgb(11, 12, 13) !important;
+  color: white;
+  border-color: black !important;
+  border: none !important;
+} */

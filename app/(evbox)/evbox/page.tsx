@@ -57,7 +57,7 @@ export default function MailPage() {
         <div className="sm:px-4 px-0">
           <section>
             <div className="mt-8 grid gap-4">
-              {data?.map((mail: any) => {
+              {data?.emails?.map((mail: any) => {
                 return <EvItem key={mail.id} mail={mail as Mail} />;
               })}
 

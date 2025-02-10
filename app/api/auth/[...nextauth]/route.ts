@@ -44,7 +44,6 @@ const options: NextAuthOptions = {
         token.accessToken = account.access_token;
       }
 
-      console.log("JWT TOKENS", token);
       return token;
     },
 
@@ -55,7 +54,6 @@ const options: NextAuthOptions = {
       session.accessToken = token.accessToken;
       session.sub = token.sub;
 
-      console.log("SESSION TOKEN", session);
       return session as CustomSession;
     },
   },
