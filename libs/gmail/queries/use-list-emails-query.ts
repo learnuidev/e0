@@ -5,10 +5,15 @@ import { getGoogleAccessToken } from "../utils/get-google-access-token";
 
 export const listEmailsQueryKey = "list-emails";
 
-export const useListEmailsQuery = (pageToken?: string, options = {}) => {
+export const useListEmailsQuery = (
+  params: { pageToken?: string; q?: string },
+  options = {}
+) => {
+  const pageToken = params?.pageToken || "";
+  const q = params?.q || "";
   const authToken = getGoogleAccessToken();
   return useQuery({
-    queryKey: [listEmailsQueryKey, pageToken],
+    queryKey: [listEmailsQueryKey, pageToken, q],
     queryFn: async () => {
       const resp = await fetch("/api/gmail/list-emails", {
         method: "POST",
@@ -17,6 +22,7 @@ export const useListEmailsQuery = (pageToken?: string, options = {}) => {
         },
         body: JSON.stringify({
           pageToken,
+          q,
         }),
       });
 

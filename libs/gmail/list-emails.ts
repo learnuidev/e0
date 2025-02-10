@@ -81,7 +81,15 @@ const blackList = [
   "hello@producthunt.com",
 ];
 
-export const listEmails = async (accessToken: string, pageToken?: string) => {
+export const listEmails = async ({
+  accessToken,
+  pageToken,
+  q,
+}: {
+  accessToken: string;
+  pageToken?: string;
+  q?: string;
+}) => {
   const gmail = gmailClient(accessToken);
 
   const res = await gmail.users.messages.list({
@@ -91,6 +99,7 @@ export const listEmails = async (accessToken: string, pageToken?: string) => {
     userId: "me",
     // q: "-from:support@npmjs.com -from:notifications@vercel.com",
     maxResults: 200, // Adjust as needed
+    q,
   });
 
   console.log("res", res);
