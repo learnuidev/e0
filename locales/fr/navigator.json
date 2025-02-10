@@ -1,5 +1,8 @@
 {
   "the.feed": "le flux",
   "le.chat": "le chat",
-  "paper.trail": "trace de papier"
+  "paper.trail": "trace de papier",
+  "the.screener": "le filtreur",
+  "dashboard": "tableau de bord",
+  "the.filter": "le filtre"
 }

@@ -1,5 +1,8 @@
 {
   "the.feed": "动态信息",
   "le.chat": "聊天",
-  "paper.trail": "文件记录"
+  "paper.trail": "文件记录",
+  "the.screener": "筛选器",
+  "dashboard": "仪表板",
+  "the.filter": "过滤器"
 }

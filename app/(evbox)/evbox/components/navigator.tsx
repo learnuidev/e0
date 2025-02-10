@@ -1,6 +1,14 @@
 "use client";
 
-import { BookIcon, CatIcon, ReceiptEuro, TreesIcon } from "lucide-react";
+import {
+  BookIcon,
+  CatIcon,
+  LayoutDashboardIcon,
+  ReceiptEuro,
+  ThumbsDown,
+  ThumbsUp,
+  TreesIcon,
+} from "lucide-react";
 
 import {
   Dialog,
@@ -11,12 +19,22 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useTranslation } from "@/libs/i18n-next/use-translation";
+import Link from "next/link";
 
-function NavigatorItemContainer({ children }: { children: React.ReactNode }) {
+function NavigatorItemContainer({
+  children,
+  href,
+}: {
+  children: React.ReactNode;
+  href: string;
+}) {
   return (
-    <div className="dark:bg-[rgb(31,32,33)] bg-gray-100 rounded-2xl p-8 flex justify-center flex-col items-center">
+    <Link
+      href={href}
+      className="dark:bg-[rgb(31,32,33)] bg-gray-100 rounded-2xl p-8 flex justify-center flex-col items-center"
+    >
       {children}
-    </div>
+    </Link>
   );
 }
 
@@ -39,25 +57,38 @@ export function Navigator() {
         </DialogHeader>
 
         <div className="grid sm:grid-cols-2 grid-cols-1 gap-4">
-          <NavigatorItemContainer>
+          <NavigatorItemContainer href="/evbox">
             <TreesIcon />
 
             <p>{t("the.evbox")}</p>
           </NavigatorItemContainer>
-          <NavigatorItemContainer>
+          <NavigatorItemContainer href="/feed">
             <BookIcon />
 
             <p>{t("navigator:the.feed")}</p>
           </NavigatorItemContainer>
-          <NavigatorItemContainer>
+          <NavigatorItemContainer href="/chat">
             <CatIcon />
 
             <p>{t("navigator:le.chat")}</p>
           </NavigatorItemContainer>
-          <NavigatorItemContainer>
+          <NavigatorItemContainer href="/trail">
             <ReceiptEuro />
 
             <p>{t("navigator:paper.trail")}</p>
+          </NavigatorItemContainer>
+          <NavigatorItemContainer href="/screener">
+            <div className="space-x-4">
+              <ThumbsUp />
+              <ThumbsDown />
+            </div>
+
+            <p>{t("navigator:the.filter")}</p>
+          </NavigatorItemContainer>
+          <NavigatorItemContainer href="/filter">
+            <LayoutDashboardIcon />
+
+            <p>{t("navigator:dashboard")}</p>
           </NavigatorItemContainer>
         </div>
       </DialogContent>
