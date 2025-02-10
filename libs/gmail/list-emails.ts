@@ -8,7 +8,7 @@ export const listEmails = async (accessToken: string) => {
 
   const res = await gmail.users.messages.list({
     userId: "me",
-    maxResults: 10, // Adjust as needed
+    maxResults: 100, // Adjust as needed
   });
 
   const messages = res.data.messages || [];

@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { useUpsertCustomTranslationMutation } from "./mutations/use-upsert-custom-translation-mutation";
 import { useListCustomTranslationsQuery } from "./queries/use-list-custom-translations-query";
 import { useToast } from "@/hooks/use-toast";
+import { Loading } from "../loading";
 
 function getNamespaces(translations: any): string[] {
   if (Array.isArray(translations)) {
@@ -173,14 +174,7 @@ export const Myelin = ({ className }: { className?: string }) => {
   }, [data, tab]);
 
   if (isLoading) {
-    return (
-      <div className="flex flex-col justify-center items-center mt-32">
-        <AnimatedLoadingText
-          className="text-xl font-light"
-          message={"Loading translations..."}
-        />
-      </div>
-    );
+    return <Loading />;
   }
 
   if (data?.nodeEnv === "development") {
