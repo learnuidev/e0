@@ -16,7 +16,7 @@ import { EvContainer } from "./components/ev-container";
 export default function MailPage() {
   const { t } = useTranslation("inbox");
 
-  const { data } = useListEmailsQuery();
+  const { data } = useListEmailsQuery({});
 
   console.log("data", data);
 
