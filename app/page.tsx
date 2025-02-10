@@ -28,8 +28,6 @@ export default function Home() {
     }
   }, [accessToken]);
 
-  console.log("session", session);
-
   if (session?.data?.user && !accessToken) {
     return (
       <div className="flex justify-center mt-32">

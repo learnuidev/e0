@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { MessageCircleIcon, PlusIcon } from "lucide-react";
@@ -9,6 +10,7 @@ import { EvItem } from "./components/ev-item";
 import { Navbar } from "./components/navbar";
 import { mailList } from "./modules/mail/mail.constants";
 import { useListEmailsQuery } from "@/libs/gmail/queries/use-list-emails-query";
+import { Mail } from "./modules/mail/mail.types";
 
 export default function MailPage() {
   const { t } = useTranslation("inbox");
@@ -61,9 +63,13 @@ export default function MailPage() {
         <div className="sm:px-4 px-0">
           <section>
             <div className="mt-8 grid gap-4">
-              {mailList.map((mail) => {
-                return <EvItem key={mail.id} mail={mail} />;
+              {data?.map((mail: any) => {
+                return <EvItem key={mail.id} mail={mail as Mail} />;
               })}
+
+              {/* {mailList.map((mail) => {
+                return <EvItem key={mail.id} mail={mail} />;
+              })} */}
             </div>
           </section>
         </div>
