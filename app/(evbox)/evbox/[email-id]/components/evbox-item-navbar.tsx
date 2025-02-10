@@ -7,6 +7,7 @@ import Link from "next/link";
 import { SearchBar } from "../../components/navbar/search-bar";
 import { NavbarContainer } from "../../components/navbar/navbar-container";
 import { ArrowLeft } from "lucide-react";
+import { AccountLink } from "../../components/account-link";
 
 export function EvboxItemNavbar() {
   return (
@@ -27,7 +28,7 @@ export function EvboxItemNavbar() {
       <div className="flex justify-end space-x-2 items-center">
         <ToggleTheme />
         <LanguageSwitcher />
-        <div className="flex justify-end">Account</div>
+        <AccountLink />
       </div>
     </NavbarContainer>
   );

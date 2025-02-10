@@ -2,5 +2,6 @@
   "login": "Connexion",
   "logout": "Déconnexion",
   "signin.with.google": "Se connecter avec Google",
-  "proceed.to.evbox": "Procéder à evbox"
+  "proceed.to.evbox": "Procéder à evbox",
+  "account": "Compte"
 }

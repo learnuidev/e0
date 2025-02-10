@@ -2,5 +2,6 @@
   "login": "Conectare",
   "logout": "Deconectare",
   "signin.with.google": "Conectare cu Google",
-  "proceed.to.evbox": "Continuă către evbox"
+  "proceed.to.evbox": "Continuă către evbox",
+  "account": "Cont bancar"
 }

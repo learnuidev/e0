@@ -7,6 +7,7 @@ import { Navigator } from "./navigator";
 import { NavbarContainer } from "./navbar/navbar-container";
 
 import { SearchBar } from "./navbar/search-bar";
+import { AccountLink } from "./account-link";
 
 export function Navbar() {
   return (
@@ -18,7 +19,7 @@ export function Navbar() {
       <div className="flex justify-end space-x-2 items-center">
         <ToggleTheme />
         <LanguageSwitcher />
-        <div className="flex justify-end">Account</div>
+        <AccountLink />
       </div>
     </NavbarContainer>
   );

@@ -31,7 +31,7 @@ function NavigatorItemContainer({
   return (
     <Link
       href={href}
-      className="dark:bg-[rgb(31,32,33)] bg-gray-100 rounded-2xl p-8 flex justify-center flex-col items-center"
+      className="dark:bg-[rgb(31,32,33)] h-32 bg-gray-100 rounded-2xl p-8 flex justify-center flex-col items-center"
     >
       {children}
     </Link>

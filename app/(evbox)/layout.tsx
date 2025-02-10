@@ -1,6 +1,7 @@
 "use client";
 
 import { ReactQueryProvider } from "@/libs/react-query/react-query-provider";
+import { Navbar } from "./evbox/components/navbar";
 
 export default function RootLayout({
   children,
@@ -9,7 +10,12 @@ export default function RootLayout({
 }>) {
   return (
     <div>
-      <ReactQueryProvider>{children}</ReactQueryProvider>
+      <ReactQueryProvider>
+        <div className="relative">
+          <Navbar />
+          {children}
+        </div>
+      </ReactQueryProvider>
     </div>
   );
 }

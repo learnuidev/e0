@@ -2,5 +2,6 @@
   "login": "Iniciar sesión",
   "logout": "Cerrar sesión",
   "signin.with.google": "Iniciar sesión con Google",
-  "proceed.to.evbox": "Proceder a evbox"
+  "proceed.to.evbox": "Proceder a evbox",
+  "account": "Cuenta"
 }
