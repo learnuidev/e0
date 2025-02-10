@@ -88,7 +88,7 @@ export function Navigator() {
           <NavigatorItemContainer href="/filter">
             <LayoutDashboardIcon />
 
-            <p>{t("navigator:dashboard")}</p>
+            <p>{t("navigator:the.dashboard")}</p>
           </NavigatorItemContainer>
         </div>
       </DialogContent>
